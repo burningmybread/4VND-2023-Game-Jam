@@ -51,6 +51,11 @@ public class Turret : MonoBehaviour
         if (attach)
         {
             transform.position = hull.transform.position;
+            this.gameObject.layer = LayerMask.NameToLayer("Default");
+        }
+        else if (!attach)
+        {
+            this.gameObject.layer = LayerMask.NameToLayer("Turret");
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
@@ -187,4 +192,5 @@ public class Turret : MonoBehaviour
         //rotate the gun based on direction of cursor
         rb.rotation = angle;
     }
+
 }
