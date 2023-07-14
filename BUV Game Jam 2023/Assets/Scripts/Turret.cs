@@ -147,6 +147,17 @@ public class Turret : MonoBehaviour
     {
         currentAmmo = magazineSize;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "TurretDock")
+        {
+            if (!attach)
+            {
+                this.transform.position = collision.transform.position;
+                rb.velocity = barrel.transform.up * 0;
+            }
+        }
+    }
 
     private void CursorAiming()
     {
