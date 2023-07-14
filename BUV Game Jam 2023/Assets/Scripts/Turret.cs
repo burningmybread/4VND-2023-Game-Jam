@@ -59,7 +59,10 @@ public class Turret : MonoBehaviour
             {
                 attach = false;
 
-                rb.velocity = barrel.transform.up * detachSpeed;
+                if (hull.GetComponent<Rigidbody2D>().velocity != Vector2.zero)
+                {
+                    rb.velocity = barrel.transform.up * detachSpeed;
+                }
 
                 hullCode.moveSpeed = 8f;
 
