@@ -7,6 +7,7 @@ using UnityEngine;
 /// handles movement and has the base script for behaviours
 /// holds health, speed, acceleration time and shits
 /// </summary>
+/// //hey :D
 
 public class Entity : MonoBehaviour
 {
