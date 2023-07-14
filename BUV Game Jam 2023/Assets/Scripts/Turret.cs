@@ -9,16 +9,21 @@ public class Turret : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject tetherPointPrefab;
     public float projectileSpeed;
+    public float detachSpeed;
     public GameObject hull;
     private bool attach = true;
+    private bool reattach = false;
     private LineRenderer tether;
     public int tetherLength = 5;
+    private Hull hullCode;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         tether = GetComponent<LineRenderer>();
+        Physics2D.IgnoreCollision(hull.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        hullCode = hull.GetComponent<Hull>();
     }
 
     // Update is called once per frame
@@ -47,7 +52,9 @@ public class Turret : MonoBehaviour
             {
                 attach = false;
 
-                rb.velocity = barrel.transform.up * 5f;
+                rb.velocity = barrel.transform.up * detachSpeed;
+
+                hullCode.moveSpeed = 8f;
 
                 //List<GameObject> tetherPoints = new List<GameObject>();
 
@@ -84,7 +91,21 @@ public class Turret : MonoBehaviour
             }
             else if (!attach)
             {
+                reattach = true;
+            }
+        }
+
+        if (reattach)
+        {
+            transform.position = Vector2.Lerp(transform.position, hull.transform.position, Time.deltaTime * 2f);
+
+            if (Vector2.Distance(transform.position, hull.transform.position) <= 1f)
+            {
+                reattach = false;
+
                 attach = true;
+
+                hullCode.moveSpeed = 5f;
             }
         }
     }
