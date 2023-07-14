@@ -9,6 +9,9 @@ public class Turret : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject tetherPointPrefab;
     public float projectileSpeed;
+    public int magazineSize;
+    public float reloadSpeed;
+    [SerializeField] int currentAmmo;
     public float detachSpeed;
     public GameObject hull;
     private bool attach = true;
@@ -16,6 +19,7 @@ public class Turret : MonoBehaviour
     private LineRenderer tether;
     public int tetherLength = 5;
     private Hull hullCode;
+    private Vector2 velocity;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +28,7 @@ public class Turret : MonoBehaviour
         tether = GetComponent<LineRenderer>();
         Physics2D.IgnoreCollision(hull.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         hullCode = hull.GetComponent<Hull>();
+        currentAmmo = magazineSize;
     }
 
     // Update is called once per frame
@@ -32,6 +37,8 @@ public class Turret : MonoBehaviour
         CursorAiming();
 
         Shoot();
+
+        Reload();
 
         AttachDetach();
 
@@ -97,7 +104,7 @@ public class Turret : MonoBehaviour
 
         if (reattach)
         {
-            transform.position = Vector2.Lerp(transform.position, hull.transform.position, Time.deltaTime * 2f);
+            transform.position = Vector2.SmoothDamp(transform.position, hull.transform.position, ref velocity, 0.3f);
 
             if (Vector2.Distance(transform.position, hull.transform.position) <= 1f)
             {
@@ -112,7 +119,7 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && currentAmmo > 0)
         {
             GameObject projectile = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
 
@@ -121,7 +128,24 @@ public class Turret : MonoBehaviour
             projectileRb.AddForce(projectile.transform.up * projectileSpeed);
 
             Destroy(projectile, 8f);
+
+            currentAmmo--;
         }
+    }
+
+    private void Reload()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < magazineSize && attach && !reattach)
+        {
+            currentAmmo = 0;
+
+            Invoke("Reloading", reloadSpeed);
+        }
+    }
+
+    void Reloading()
+    {
+        currentAmmo = magazineSize;
     }
 
     private void CursorAiming()

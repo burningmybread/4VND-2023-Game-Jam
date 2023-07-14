@@ -400,6 +400,9 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1634397918872729274, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
   tetherPointPrefab: {fileID: 5357405845509140287, guid: 6defd2e9c369a084b8d909a4fe1f1afb, type: 3}
   projectileSpeed: 1000
+  magazineSize: 30
+  reloadSpeed: 3
+  currentAmmo: 0
   detachSpeed: 10
   hull: {fileID: 1736017651}
   tetherLength: 5
