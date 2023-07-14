@@ -18,16 +18,19 @@ public class Projectile : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         //damages enemy and destroys bullet 
         if (collision.gameObject.tag == "Enemy")
         {
+            var health = collision.gameObject.GetComponent<Health>();
+
+            health.hp = health.hp - damage;
 
             Destroy(gameObject);
         }
         //destroys bullet if it hits a wall
-        if (collision.gameObject.tag == "Wall")
+        else if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }
