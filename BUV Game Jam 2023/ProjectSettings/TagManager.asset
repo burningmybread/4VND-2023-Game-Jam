@@ -15,11 +15,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - TurretSurface
+  - HullSurface
+  - Turret
+  - Hull
+  - Bullet
   - 
   - 
   - 

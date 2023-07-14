@@ -14,7 +14,7 @@ public class Turret : MonoBehaviour
     [SerializeField] int currentAmmo;
     public float detachSpeed;
     public GameObject hull;
-    private bool attach = true;
+    public bool attach = true;
     private bool reattach = false;
     private LineRenderer tether;
     public int tetherLength = 5;
@@ -101,7 +101,18 @@ public class Turret : MonoBehaviour
             }
             else if (!attach)
             {
-                reattach = true;
+                //this.gameObject.layer = LayerMask.NameToLayer("Hull");
+                RaycastHit2D hit = Physics2D.Raycast(this.transform.position, hull.transform.position - this.gameObject.transform.position);
+                if (hit.collider.gameObject == hull)
+                {
+                    Debug.Log("hit hull");
+                    reattach = true;
+                }
+                else
+                {
+                    Debug.Log("did not hit");
+                    reattach = false;
+                }
             }
         }
 

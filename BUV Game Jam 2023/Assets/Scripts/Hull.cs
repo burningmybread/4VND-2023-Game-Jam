@@ -8,11 +8,14 @@ public class Hull : MonoBehaviour
     public float moveSpeed;
     public float rotateSpeed;
     private Vector2 moveDirection;
+    private Turret turretCode;
+    public GameObject turret;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        turretCode = turret.GetComponent<Turret>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,16 @@ public class Hull : MonoBehaviour
             Quaternion rotation = Quaternion.LookRotation(Vector3.forward, moveDirection);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
         }
+
+        if(!turretCode.attach)
+        {
+            this.gameObject.layer = LayerMask.NameToLayer("Hull");
+        }
+        else if(turretCode.attach)
+        {
+            this.gameObject.layer = LayerMask.NameToLayer("Default");
+        }
+
 
         //if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         //{
