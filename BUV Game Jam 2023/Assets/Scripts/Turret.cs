@@ -11,6 +11,8 @@ public class Turret : MonoBehaviour
     private List<GameObject> tetherPoints = new List<GameObject>();
     //private int tetherPoint;
     public int tetherLength = 5;
+    public float firerate;
+    private bool canShoot = true;
     public float projectileSpeed;
     public int magazineSize;
     public float reloadSpeed;
@@ -47,16 +49,16 @@ public class Turret : MonoBehaviour
         AttachDetach();
 
         tether.SetPosition(0, transform.position);
-        tether.SetPosition(1, hull.transform.position);
+        tether.SetPosition(tetherLength - 1, hull.transform.position);
 
-        //for (int i = 0; i < tetherLength; i++)
-        //{
-        //    if (Vector2.Distance(transform.position, hull.transform.position) > 5f)
-        //    {
-        //        GameObject tetherPoint = Instantiate(tetherPointPrefab, transform.position, Quaternion.identity);
-        //        tether.SetPosition(i, tetherPoint.transform.position);
-        //    }
-        //}
+        for (int i = 0; i < tetherLength; i++)
+        {
+            if (Vector2.Distance(transform.position, hull.transform.position) > 5f && tether.positionCount < tetherLength)
+            {
+                GameObject tetherPoint = Instantiate(tetherPointPrefab, transform.position, Quaternion.identity);
+                tether.SetPosition(i, tetherPoint.transform.position);
+            }
+        }
     }
 
     private void AttachDetach()
@@ -118,7 +120,7 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && currentAmmo > 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && currentAmmo > 0 && canShoot)
         {
             GameObject projectile = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
 
@@ -130,9 +132,19 @@ public class Turret : MonoBehaviour
 
             currentAmmo--;
 
-            //turretAnimator.SetTrigger("Fire");
-            //turretAnimator.SetTrigger("Stop");
+            canShoot = false;
+
+            turretAnimator.SetTrigger("Fire");
+
+            Invoke("DoFirerate", firerate);
         }
+    }
+
+    void DoFirerate()
+    {
+        canShoot = true;
+
+        turretAnimator.SetTrigger("Stop");
     }
 
     private void Reload()
