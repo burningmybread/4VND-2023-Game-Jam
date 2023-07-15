@@ -165,7 +165,7 @@ public class Turret : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && currentAmmo > 0 && canShoot)
         {
             turretAnimator.SetTrigger("Fire");
-            AudioManager.Instance.PlayEffect("Turretshoot");
+            //AudioManager.Instance.PlayEffect("Turretshoot");
             Invoke("FireProjectile", fireDelay);
         }
     }
