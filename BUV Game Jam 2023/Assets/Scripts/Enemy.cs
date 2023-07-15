@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject player;
-    private bool attacking = false;
+    private bool chasing = false;
     public float moveSpeed;
     public float damage;
     public float attackDistance;
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            attacking = true;
+            chasing = true;
         }
     }
 
@@ -57,16 +57,16 @@ public class Enemy : MonoBehaviour
     {
         if (!health.dead)
         {
-            if (attacking == true)
+            if (chasing == true)
             {
                 if (Vector2.Distance(transform.position, player.transform.position) > attackDistance)
                 {
                     canAttack = false;
 
                     //Move the enemy toward a given position which is player
-                    transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+                    transform.parent.position = Vector2.MoveTowards(transform.parent.position, player.transform.position, moveSpeed * Time.deltaTime);
                 }
-                else if (Vector2.Distance(transform.position, player.transform.position) <= attackDistance)
+                else if (Vector2.Distance(transform.parent.position, player.transform.position) <= attackDistance)
                 {
                     canAttack = true;
                 }
@@ -75,13 +75,13 @@ public class Enemy : MonoBehaviour
                     canAttack = false;
                 }
 
-                Vector2 direction = player.transform.position - transform.position;
+                Vector2 direction = player.transform.position - transform.parent.position;
                 direction.Normalize();
 
                 //Mathf to find angle between 2 points in radians, multiply to change it to degree
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-                transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+                transform.parent.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             }
         }
         else if (health.dead)
