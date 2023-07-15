@@ -27,8 +27,7 @@ public class Turret : MonoBehaviour
     private Hull hullCode;
     private Vector2 velocity;
     public Animator turretAnimator;
-
-
+    private bool canReload = true;
     
     // Start is called before the first frame update
     void Start()
@@ -100,6 +99,8 @@ public class Turret : MonoBehaviour
             {
                 attach = false;
 
+                canReload = false;
+
                 if (hull.GetComponent<Rigidbody2D>().velocity != Vector2.zero)
                 {
                     rb.velocity = barrel.transform.up * detachSpeed;
@@ -158,6 +159,8 @@ public class Turret : MonoBehaviour
 
                 attach = true;
 
+                canReload = true;
+
                 hullCode.moveSpeed = 5f;
             }
         }
@@ -199,7 +202,7 @@ public class Turret : MonoBehaviour
 
     private void Reload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < magazineSize && attach && !reattach)
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < magazineSize && canReload)
         {
             currentAmmo = 0;
             Invoke("Reloading", reloadSpeed);
@@ -216,8 +219,21 @@ public class Turret : MonoBehaviour
         {
             if (!attach)
             {
+                canReload = true;
+
                 this.transform.position = collision.transform.position;
                 rb.velocity = barrel.transform.up * 0;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "TurretDock")
+        {
+            if (!attach)
+            {
+                canReload = false;
             }
         }
     }
