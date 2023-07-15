@@ -101,4 +101,9 @@ public class Hull : MonoBehaviour
             hullAnimator.SetTrigger("IsIdle");
         }
     }
+
+    public void MovementAudio()
+    {
+        AudioManager.Instance.PlayEffect("Tankwalk");
+    }
 }

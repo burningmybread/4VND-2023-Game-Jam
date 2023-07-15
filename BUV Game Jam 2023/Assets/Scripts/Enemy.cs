@@ -92,6 +92,7 @@ public class Enemy : MonoBehaviour
         }
         else if (health.dead)
         {
+            AudioManager.Instance.PlayEffect("Enemydeath");
             Instantiate(deathDecal, this.transform.position, this.transform.rotation);
             Destroy(gameObject);
         }

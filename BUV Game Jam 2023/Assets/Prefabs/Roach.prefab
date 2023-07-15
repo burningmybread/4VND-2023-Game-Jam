@@ -195,7 +195,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.02009201}
   serializedVersion: 2
-  m_Radius: 19.942081
+  m_Radius: 10
 --- !u!114 &3375223535060913583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,12 +208,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ee898e90181d940acc740d97a8bae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2791900444443132151, guid: a8c7778e0973f174c94115caf2ded5eb, type: 3}
+  player: {fileID: 0}
   moveSpeed: 3
   damage: 2
-  attackDistance: 5
+  attackDistance: 6
   canAttack: 0
-  deathDecal: {fileID: 489598746236339957, guid: 7973a38514ebe1a489eb99374cb6858a, type: 3}
+  deathDecal: {fileID: 5928240883229312341, guid: 52a8924cb1eb8c74c84f8b0e993a51e0, type: 3}
 --- !u!114 &3375223535060913582
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -168,7 +168,7 @@ public class Turret : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && currentAmmo > 0 && canShoot)
         {
             turretAnimator.SetTrigger("Fire");
-
+            AudioManager.Instance.PlayEffect("Turretshoot");
             Invoke("FireProjectile", fireDelay);
         }
     }
@@ -236,5 +236,4 @@ public class Turret : MonoBehaviour
         //rotate the gun based on direction of cursor
         rb.rotation = angle;
     }
-
 }
