@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _effectSource;
+    [SerializeField] private AudioSource _walkSource;
     [SerializeField] private bool musicFadingOut = false;
 
     private void Awake()
@@ -55,20 +56,28 @@ public class AudioManager : MonoBehaviour
         //mixer.SetFloat(VolumeSettings.MIXER_SFX, Mathf.Log10(sfxVolume) * 20);
     }
 
+    public void PlayWalk(string clip) //specifically for the walking sfx
+    {
+        AudioClip _audioClip = GetClipFromList(clip, SFXTracks);
+
+        if (_audioClip != null && _audioClip.name == "Mechwalk")
+        {
+            _effectSource.Play();
+
+            if (_effectSource.isPlaying)
+            {
+                _effectSource.PlayDelayed(_audioClip.length);
+            }
+        }
+    }
+
     public void PlayEffect(string clip) //for menu buttons and such
     {
         AudioClip _audioClip = GetClipFromList(clip, SFXTracks);
 
         if (_audioClip != null)
         {
-            if (_audioClip.name == "Tankwalk")
-            {
-                _effectSource.PlayDelayed(_audioClip.length);
-            }
-            else
-            {
-                _effectSource.PlayOneShot(_audioClip);
-            }
+            _effectSource.PlayOneShot(_audioClip);
         }
     }
 
