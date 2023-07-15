@@ -1434,7 +1434,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 25.045805
+  orthographic size: 27.790586
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2832,26 +2832,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.631526, y: 1.21}
   m_EdgeRadius: 0
---- !u!1 &1190976857 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1377573641422232226, guid: 6dfd9e2cc34bf3a48a1216029a0722ca, type: 3}
-  m_PrefabInstance: {fileID: 1999733011}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1190976861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190976857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fdbbab4f9dba5f43b7bb8b84626fcfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallPenetration: 1
-  normalBullet: {fileID: 1634397918872729274, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
-  penetratingBullet: {fileID: 3223499989787311265, guid: a82da13499383144bbdffc8b207914df, type: 3}
 --- !u!1001 &1223110883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4452,6 +4432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 3347609481435464447, guid: 15fa823e888488c4ea59ed2a6c53b7d6, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3347609482296318310, guid: 15fa823e888488c4ea59ed2a6c53b7d6, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.21
@@ -4837,10 +4821,6 @@ PrefabInstance:
     - target: {fileID: 1377573641422232220, guid: 6dfd9e2cc34bf3a48a1216029a0722ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1377573641422232221, guid: 6dfd9e2cc34bf3a48a1216029a0722ca, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1377573641422232226, guid: 6dfd9e2cc34bf3a48a1216029a0722ca, type: 3}
       propertyPath: m_Name

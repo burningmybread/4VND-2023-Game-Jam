@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1596871340573997077}
   - component: {fileID: 6530500072666250188}
   - component: {fileID: 634716590977478547}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Bullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   impactFx: {fileID: 1878828990477770901, guid: aade1aed1f2af3448902ce5a3f69d42c, type: 3}
+  penetration: 0
 --- !u!70 &634716590977478547
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

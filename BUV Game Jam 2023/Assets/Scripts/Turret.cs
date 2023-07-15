@@ -27,7 +27,8 @@ public class Turret : MonoBehaviour
     private Vector2 velocity;
     public Animator turretAnimator;
     private bool canReload = true;
-    
+    public bool isDocked;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -220,8 +221,10 @@ public class Turret : MonoBehaviour
             {
                 canReload = true;
 
+                projectilePrefab.gameObject.layer = LayerMask.NameToLayer("Penetration");
                 this.transform.position = collision.transform.position;
                 rb.velocity = barrel.transform.up * 0;
+                isDocked = true;
             }
         }
     }
@@ -232,6 +235,8 @@ public class Turret : MonoBehaviour
         {
             if (!attach)
             {
+                projectilePrefab.gameObject.layer = LayerMask.NameToLayer("Projectile");
+                isDocked = false;
                 canReload = false;
             }
         }
