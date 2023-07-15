@@ -28,6 +28,8 @@ public class Turret : MonoBehaviour
     private Vector2 velocity;
     public Animator turretAnimator;
 
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -121,6 +123,7 @@ public class Turret : MonoBehaviour
             {
                 //this.gameObject.layer = LayerMask.NameToLayer("Hull");
                 RaycastHit2D hit = Physics2D.Raycast(this.transform.position, hull.transform.position - this.gameObject.transform.position);
+                //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("Tank").GetComponent<Collider2D>());
                 if (hit.collider.gameObject == hull)
                 {
                     Debug.Log("hit hull");
