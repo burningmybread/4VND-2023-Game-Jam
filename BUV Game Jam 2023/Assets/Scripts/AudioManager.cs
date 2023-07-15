@@ -59,9 +59,16 @@ public class AudioManager : MonoBehaviour
     {
         AudioClip _audioClip = GetClipFromList(clip, SFXTracks);
 
-        if (_audioClip != null && !_effectSource.isPlaying)
+        if (_audioClip != null)
         {
-            _effectSource.PlayOneShot(_audioClip);
+            if (_audioClip.name == "Tankwalk")
+            {
+                _effectSource.PlayDelayed(_audioClip.length);
+            }
+            else
+            {
+                _effectSource.PlayOneShot(_audioClip);
+            }
         }
     }
 
