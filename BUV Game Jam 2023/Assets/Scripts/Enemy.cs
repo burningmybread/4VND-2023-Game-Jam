@@ -63,6 +63,8 @@ public class Enemy : MonoBehaviour
                 {
                     canAttack = false;
 
+                    animator.SetTrigger("Moving");
+
                     //Move the enemy toward a given position which is player
                     transform.parent.position = Vector2.MoveTowards(transform.parent.position, player.transform.position, moveSpeed * Time.deltaTime);
                 }
@@ -72,6 +74,8 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
+                    animator.SetTrigger("Idle");
+
                     canAttack = false;
                 }
 
