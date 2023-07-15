@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
                 if (Vector2.Distance(transform.position, player.transform.position) > attackDistance)
                 {
                     canAttack = false;
-
+                    
                     animator.SetTrigger("Moving");
 
                     //Move the enemy toward a given position which is player

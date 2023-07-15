@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float damage;
+    public GameObject impactFx;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,8 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Instantiate(impactFx, this.transform.position, this.transform.rotation);
+
         //damages enemy and destroys bullet 
         if (collision.gameObject.tag == "Enemy")
         {
