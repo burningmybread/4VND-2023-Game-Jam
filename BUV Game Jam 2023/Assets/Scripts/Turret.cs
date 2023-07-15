@@ -7,7 +7,7 @@ public class Turret : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     public Transform barrel;
     public GameObject projectilePrefab;
-    public GameObject tetherPointPrefab;
+    //public GameObject tetherPointPrefab;
     public float projectileSpeed;
     public int magazineSize;
     public float reloadSpeed;
@@ -17,7 +17,7 @@ public class Turret : MonoBehaviour
     public bool attach = true;
     private bool reattach = false;
     private LineRenderer tether;
-    public int tetherLength = 5;
+    //public int tetherLength = 5;
     private Hull hullCode;
     private Vector2 velocity;
 
@@ -42,8 +42,8 @@ public class Turret : MonoBehaviour
 
         AttachDetach();
 
-        //tether.SetPosition(0, transform.position);
-        //tether.SetPosition(4, hull.transform.position);
+        tether.SetPosition(0, transform.position);
+        tether.SetPosition(1, hull.transform.position);
     }
 
     private void AttachDetach()
