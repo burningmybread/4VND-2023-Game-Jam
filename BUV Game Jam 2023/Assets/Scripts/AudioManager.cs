@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer mixer;
     public AudioMixerGroup AMG_Music;
     public AudioMixerGroup AMG_SFX;
+    public AudioMixerGroup AMG_Walk;
 
     //public const string MUSIC_KEY = "musicVolume"; //shows player prefs where to save the data; called in VolumeSettings.cs
     //public const string SFX_KEY = "sfxVolume";
@@ -26,6 +27,7 @@ public class AudioManager : MonoBehaviour
 
     public List<Sounds> MusicTracks;
     public List<Sounds> SFXTracks;
+    public List<Sounds> WalkTrack;
 
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _effectSource;
@@ -58,16 +60,11 @@ public class AudioManager : MonoBehaviour
 
     public void PlayWalk(string clip) //specifically for the walking sfx
     {
-        AudioClip _audioClip = GetClipFromList(clip, SFXTracks);
+        AudioClip _audioClip = GetClipFromList(clip, WalkTrack);
 
-        if (_audioClip != null && _audioClip.name == "Mechwalk")
+        if (_audioClip != null && !_walkSource.isPlaying)
         {
-            _effectSource.Play();
-
-            if (_effectSource.isPlaying)
-            {
-                _effectSource.PlayDelayed(_audioClip.length);
-            }
+            _walkSource.Play();
         }
     }
 
