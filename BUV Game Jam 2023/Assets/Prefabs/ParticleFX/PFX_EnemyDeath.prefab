@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5928240883229312340}
+  - component: {fileID: -6739235440386005968}
   m_Layer: 0
   m_Name: PFX_EnemyDeath
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6739235440386005968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928240883229312341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959545fd15692b64fbdaa16b8debc459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cleanupTime: 3
 --- !u!1 &5928240883315355142
 GameObject:
   m_ObjectHideFlags: 0
