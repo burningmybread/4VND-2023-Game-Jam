@@ -187,7 +187,7 @@ public class Turret : MonoBehaviour
         var direction = (mousePos - gameObject.transform.position).normalized;
 
         //Get the correct angle for the gun to rotate
-        var angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg) + 30f;
+        var angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg) - 90f;
 
         //rotate the gun based on direction of cursor
         rb.rotation = angle;

@@ -160,8 +160,8 @@ TextureImporter:
         y: 4022
         width: 691
         height: 672
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4999999, y: 0.5607801}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,8 +181,8 @@ TextureImporter:
         y: 4221
         width: 152
         height: 463
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5074158, y: 0.27353874}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,8 +202,8 @@ TextureImporter:
         y: 3329
         width: 687
         height: 657
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.48810947, y: 0.5746011}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,8 +223,8 @@ TextureImporter:
         y: 2522
         width: 705
         height: 646
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.58219373}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,8 +244,8 @@ TextureImporter:
         y: 3429
         width: 153
         height: 548
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5088984, y: 0.22422935}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -261,12 +261,12 @@ TextureImporter:
       name: Tank_14
       rect:
         serializedVersion: 2
-        x: 1005
+        x: 1001
         y: 2644
         width: 154
         height: 579
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5442029, y: 0.22253439}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,8 +286,8 @@ TextureImporter:
         y: 1727
         width: 690
         height: 672
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.50394624, y: 0.56077975}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,8 +307,8 @@ TextureImporter:
         y: 1852
         width: 153
         height: 536
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5088984, y: 0.23075548}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,8 +328,8 @@ TextureImporter:
         y: 852
         width: 687
         height: 656
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5118906, y: 0.57679003}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,8 +349,8 @@ TextureImporter:
         y: 939
         width: 154
         height: 516
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.50884056, y: 0.2440661}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -366,12 +366,12 @@ TextureImporter:
       name: Tank_20
       rect:
         serializedVersion: 2
-        x: 94
-        y: 55
+        x: 95
+        y: 56
         width: 703
         height: 648
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5840412}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -391,8 +391,8 @@ TextureImporter:
         y: 163
         width: 152
         height: 497
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5179138, y: 0.2507177}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
