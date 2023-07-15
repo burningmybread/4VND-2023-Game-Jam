@@ -5,6 +5,8 @@ using UnityEngine;
 public class PressurePlateScript : MonoBehaviour
 {
     public GameObject keyObject;
+    public bool once = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,10 @@ public class PressurePlateScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            keyObject.SetActive(true);
+            if (!once)
+            {
+                keyObject.SetActive(true);
+            }
         }
     }
 }

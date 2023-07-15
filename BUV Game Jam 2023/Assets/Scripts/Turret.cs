@@ -8,10 +8,9 @@ public class Turret : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     public Transform barrel;
     public GameObject projectilePrefab;
-    public GameObject tetherPointPrefab;
+    //public GameObject tetherPointPrefab;
     private List<GameObject> tetherPoints = new List<GameObject>();
     //private int tetherPoint;
-    public int tetherLength = 5;
     public float fireDelay;
     public float firerate;
     private bool canShoot = true;
@@ -153,7 +152,7 @@ public class Turret : MonoBehaviour
 
             transform.position = Vector2.SmoothDamp(transform.position, hull.transform.position, ref velocity, 0.3f);
 
-            if (Vector2.Distance(transform.position, hull.transform.position) <= 1f)
+            if (Vector2.Distance(transform.position, hull.transform.position) <= 4f)
             {
                 reattach = false;
 
@@ -161,7 +160,7 @@ public class Turret : MonoBehaviour
 
                 canReload = true;
 
-                hullCode.moveSpeed = 5f;
+                hullCode.moveSpeed = 8f;
             }
         }
     }
