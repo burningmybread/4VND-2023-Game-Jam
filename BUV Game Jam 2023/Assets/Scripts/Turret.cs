@@ -42,8 +42,8 @@ public class Turret : MonoBehaviour
 
         AttachDetach();
 
-        //tether.SetPosition(0, transform.position);
-        //tether.SetPosition(4, hull.transform.position);
+        tether.SetPosition(0, transform.position);
+        tether.SetPosition(1, hull.transform.position);
     }
 
     private void AttachDetach()
@@ -70,39 +70,9 @@ public class Turret : MonoBehaviour
                 }
 
                 hullCode.moveSpeed = 8f;
+                
 
-                //List<GameObject> tetherPoints = new List<GameObject>();
 
-                //for (int i = 0; i <= tether.positionCount; i++)
-                //{
-                //    GameObject tetherPoint = Instantiate(tetherPointPrefab, transform.position, Quaternion.identity);
-
-                //    tetherPoints.Add(tetherPoint);
-
-                //    for (int y = 0; y <= tether.positionCount; y++)
-                //    {
-                //        if (y == tether.positionCount)
-                //        {
-                //            tether.SetPosition(y, hull.transform.position);
-                //        }
-                //        else if (y < tether.positionCount)
-                //        {
-                //            tether.SetPosition(y, tetherPoints[i].transform.position);
-                //        }
-                //    }
-                //}
-
-                //for (int i = 0; i <= tetherLength; i++)
-                //{
-                //    if (i <= tetherLength)
-                //    {
-                //        tether.SetPosition(i, transform.position);
-                //    }
-                //    else
-                //    {
-                //        tether.SetPosition(i, hull.transform.position);
-                //    }
-                //}
             }
             else if (!attach)
             {
