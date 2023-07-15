@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3375223534508714516}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Roach
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3375223535060913576}
   - component: {fileID: 3375223535060913583}
   - component: {fileID: 3375223535060913582}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2119750520, guid: ebd4ed824f7250f478cc04a5c272bc14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -193,9 +193,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000071525574, y: -0.33026767}
+  m_Offset: {x: 0, y: -0.02009201}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 19.942081
 --- !u!114 &3375223535060913583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,11 +208,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ee898e90181d940acc740d97a8bae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2791900444443132151, guid: a8c7778e0973f174c94115caf2ded5eb, type: 3}
   moveSpeed: 3
   damage: 2
   attackDistance: 5
   canAttack: 0
+  deathDecal: {fileID: 489598746236339957, guid: 7973a38514ebe1a489eb99374cb6858a, type: 3}
 --- !u!114 &3375223535060913582
 MonoBehaviour:
   m_ObjectHideFlags: 0

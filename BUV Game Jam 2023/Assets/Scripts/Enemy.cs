@@ -12,10 +12,12 @@ public class Enemy : MonoBehaviour
     public bool canAttack = false;
     private Health health;
     private Animator animator;
+    public GameObject deathDecal;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         health = GetComponent<Health>();
         animator = GetComponent<Animator>();
     }
@@ -90,6 +92,7 @@ public class Enemy : MonoBehaviour
         }
         else if (health.dead)
         {
+            Instantiate(deathDecal, this.transform.position, this.transform.rotation);
             Destroy(gameObject);
         }
     }

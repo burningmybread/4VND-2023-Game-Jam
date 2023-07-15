@@ -241,9 +241,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1007
-        y: 3429
+        y: 3430
         width: 153
-        height: 542
+        height: 540
       alignment: 9
       pivot: {x: 0.5088984, y: 0.22422935}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,7 +264,7 @@ TextureImporter:
         x: 1001
         y: 2644
         width: 154
-        height: 549
+        height: 546
       alignment: 9
       pivot: {x: 0.5442029, y: 0.22253439}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,7 +303,7 @@ TextureImporter:
       name: Tank_16
       rect:
         serializedVersion: 2
-        x: 1010
+        x: 1009
         y: 1852
         width: 153
         height: 502
@@ -346,9 +346,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1015
-        y: 940
+        y: 942
         width: 154
-        height: 485
+        height: 480
       alignment: 9
       pivot: {x: 0.50884056, y: 0.2440661}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,9 +388,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1042
-        y: 163
+        y: 164
         width: 152
-        height: 482
+        height: 478
       alignment: 9
       pivot: {x: 0.5179138, y: 0.2507177}
       border: {x: 0, y: 0, z: 0, w: 0}
