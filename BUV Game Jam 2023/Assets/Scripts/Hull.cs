@@ -11,6 +11,7 @@ public class Hull : MonoBehaviour
     private Turret turretCode;
     public GameObject turret;
     public Animator hullAnimator;
+    private int numberOfSphere;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +65,15 @@ public class Hull : MonoBehaviour
         else
         {
             hullAnimator.SetTrigger("IsIdle");
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "DataSphere")
+        {
+            numberOfSphere++;
+            Destroy(collision.gameObject);
+            Debug.Log(numberOfSphere);
         }
     }
 }

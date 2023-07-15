@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - TurretDock
   - Enemy Projectile
+  - DataSphere
   layers:
   - Default
   - TransparentFX
