@@ -184,7 +184,7 @@ public class Turret : MonoBehaviour
 
         projectileRb.AddForce(projectile.transform.up * projectileSpeed);
 
-        Destroy(projectile, 8f);
+        Destroy(projectile, 20f);
 
         currentAmmo--;
 
