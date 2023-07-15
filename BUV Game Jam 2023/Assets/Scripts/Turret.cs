@@ -8,6 +8,9 @@ public class Turret : MonoBehaviour
     public Transform barrel;
     public GameObject projectilePrefab;
     public GameObject tetherPointPrefab;
+    private List<GameObject> tetherPoints = new List<GameObject>();
+    //private int tetherPoint;
+    public int tetherLength = 5;
     public float projectileSpeed;
     public int magazineSize;
     public float reloadSpeed;
@@ -17,7 +20,6 @@ public class Turret : MonoBehaviour
     public bool attach = true;
     private bool reattach = false;
     private LineRenderer tether;
-    public int tetherLength = 5;
     private Hull hullCode;
     private Vector2 velocity;
     public Animator turretAnimator;
@@ -29,6 +31,8 @@ public class Turret : MonoBehaviour
         Physics2D.IgnoreCollision(hull.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         hullCode = hull.GetComponent<Hull>();
         currentAmmo = magazineSize;
+
+        tether.positionCount = tetherLength;
     }
 
     // Update is called once per frame
@@ -44,6 +48,15 @@ public class Turret : MonoBehaviour
 
         tether.SetPosition(0, transform.position);
         tether.SetPosition(1, hull.transform.position);
+
+        //for (int i = 0; i < tetherLength; i++)
+        //{
+        //    if (Vector2.Distance(transform.position, hull.transform.position) > 5f)
+        //    {
+        //        GameObject tetherPoint = Instantiate(tetherPointPrefab, transform.position, Quaternion.identity);
+        //        tether.SetPosition(i, tetherPoint.transform.position);
+        //    }
+        //}
     }
 
     private void AttachDetach()
@@ -70,9 +83,6 @@ public class Turret : MonoBehaviour
                 }
 
                 hullCode.moveSpeed = 8f;
-                
-
-
             }
             else if (!attach)
             {
