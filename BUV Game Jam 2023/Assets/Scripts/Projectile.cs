@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float damage;
     public GameObject impactFx;
+    public bool penetration = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,10 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          
+        if (penetration)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Penetration");
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -33,7 +37,7 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
         //destroys bullet if it hits a wall
-        else if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Player")
+        else if (collision.gameObject.tag == "Wall" && !penetration || collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }

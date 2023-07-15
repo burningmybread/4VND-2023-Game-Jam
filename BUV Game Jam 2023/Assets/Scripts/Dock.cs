@@ -4,15 +4,47 @@ using UnityEngine;
 
 public class Dock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool wallPenetration = false;
+    public GameObject normalBullet;
+    public GameObject penetratingBullet;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.tag == "Player")
+        {
+            var turret = collision.GetComponent<Turret>();
+            
+            if (!turret.attach)
+            {
+                if (wallPenetration)
+                {
+                    turret.projectilePrefab = penetratingBullet;
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.tag == "Player")
+        {
+            var turret = collision.GetComponent<Turret>();
+
+            if (!turret.attach)
+            {
+                if (wallPenetration)
+                {
+                    turret.projectilePrefab = normalBullet;
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
     }
 }

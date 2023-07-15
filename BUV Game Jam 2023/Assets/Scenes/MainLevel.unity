@@ -348,7 +348,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &150597046
 MonoBehaviour:
@@ -439,7 +439,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9195427765537866432, guid: 0185e4c348e8c694491939b9717073e6, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 9195427765537866432, guid: 0185e4c348e8c694491939b9717073e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -991,7 +991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2956439722240607181, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2956439722240607181, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1288,6 +1288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdbbab4f9dba5f43b7bb8b84626fcfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallPenetration: 1
+  normalBullet: {fileID: 1634397918872729274, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
+  penetratingBullet: {fileID: 3223499989787311265, guid: a82da13499383144bbdffc8b207914df, type: 3}
 --- !u!1 &1343496609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,7 +1373,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1424013999
 GameObject:
@@ -2142,6 +2145,10 @@ PrefabInstance:
       propertyPath: turretAnimator
       value: 
       objectReference: {fileID: 513997622}
+    - target: {fileID: 3347609481435464446, guid: 15fa823e888488c4ea59ed2a6c53b7d6, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1634397918872729274, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
     - target: {fileID: 3347609481435464446, guid: 15fa823e888488c4ea59ed2a6c53b7d6, type: 3}
       propertyPath: tetherPointPrefab
       value: 
