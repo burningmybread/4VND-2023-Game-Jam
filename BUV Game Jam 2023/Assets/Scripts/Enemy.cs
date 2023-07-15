@@ -5,13 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject player;
-    private bool chasing = false;
+    public bool chasing = false;
     public float moveSpeed;
     public float damage;
     public float attackDistance;
     public bool canAttack = false;
-    private Health health;
-    private Animator animator;
+    public Health health;
+    public Animator animator;
     public GameObject deathDecal;
 
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         Behavior();
 
@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Damage()
+    public virtual void Damage()
     {
         if (canAttack)
         {
@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Behavior()
+    public virtual void Behavior()
     {
         if (!health.dead)
         {
@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
                 if (Vector2.Distance(transform.position, player.transform.position) > attackDistance)
                 {
                     canAttack = false;
-
+                    
                     animator.SetTrigger("Moving");
 
                     //Move the enemy toward a given position which is player

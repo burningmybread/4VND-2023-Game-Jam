@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer mixer;
     public AudioMixerGroup AMG_Music;
     public AudioMixerGroup AMG_SFX;
+    public AudioMixerGroup AMG_Walk;
 
     //public const string MUSIC_KEY = "musicVolume"; //shows player prefs where to save the data; called in VolumeSettings.cs
     //public const string SFX_KEY = "sfxVolume";
@@ -26,9 +27,11 @@ public class AudioManager : MonoBehaviour
 
     public List<Sounds> MusicTracks;
     public List<Sounds> SFXTracks;
+    public List<Sounds> WalkTrack;
 
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _effectSource;
+    [SerializeField] private AudioSource _walkSource;
     [SerializeField] private bool musicFadingOut = false;
 
     private void Awake()
@@ -55,20 +58,23 @@ public class AudioManager : MonoBehaviour
         //mixer.SetFloat(VolumeSettings.MIXER_SFX, Mathf.Log10(sfxVolume) * 20);
     }
 
+    public void PlayWalk(string clip) //specifically for the walking sfx
+    {
+        AudioClip _audioClip = GetClipFromList(clip, WalkTrack);
+
+        if (_audioClip != null && !_walkSource.isPlaying)
+        {
+            _walkSource.Play();
+        }
+    }
+
     public void PlayEffect(string clip) //for menu buttons and such
     {
         AudioClip _audioClip = GetClipFromList(clip, SFXTracks);
 
         if (_audioClip != null)
         {
-            if (_audioClip.name == "Tankwalk")
-            {
-                _effectSource.PlayDelayed(_audioClip.length);
-            }
-            else
-            {
-                _effectSource.PlayOneShot(_audioClip);
-            }
+            _effectSource.PlayOneShot(_audioClip);
         }
     }
 
