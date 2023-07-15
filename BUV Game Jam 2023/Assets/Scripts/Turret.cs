@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Turret : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Turret : MonoBehaviour
     private List<GameObject> tetherPoints = new List<GameObject>();
     //private int tetherPoint;
     public int tetherLength = 5;
+    public float fireDelay;
     public float firerate;
     private bool canShoot = true;
     public float projectileSpeed;
@@ -25,6 +27,7 @@ public class Turret : MonoBehaviour
     private Hull hullCode;
     private Vector2 velocity;
     public Animator turretAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +36,6 @@ public class Turret : MonoBehaviour
         Physics2D.IgnoreCollision(hull.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         hullCode = hull.GetComponent<Hull>();
         currentAmmo = magazineSize;
-
-        tether.positionCount = tetherLength;
     }
 
     // Update is called once per frame
@@ -46,23 +47,41 @@ public class Turret : MonoBehaviour
 
         Reload();
 
+        if (currentAmmo < 0)
+        {
+            currentAmmo = 0;
+        }
+        else if (currentAmmo > magazineSize)
+        {
+            currentAmmo = magazineSize;
+        }
+
+        tether.SetPosition(0, hull.transform.position);
+
+        tether.SetPosition(tether.positionCount - 1, transform.position);
+
         AttachDetach();
 
-        tether.SetPosition(0, transform.position);
-        tether.SetPosition(tetherLength - 1, hull.transform.position);
+        //if (Vector2.Distance(transform.position, tetherPoints[currentPoint].transform.position) > 5f && tetherPoints.Count > 0)
+        //{
+        //    GameObject tetherPoint = Instantiate(tetherPointPrefab, transform.position, Quaternion.identity);
 
-        for (int i = 0; i < tetherLength; i++)
-        {
-            if (Vector2.Distance(transform.position, hull.transform.position) > 5f && tether.positionCount < tetherLength)
-            {
-                GameObject tetherPoint = Instantiate(tetherPointPrefab, transform.position, Quaternion.identity);
-                tether.SetPosition(i, tetherPoint.transform.position);
-            }
-        }
+        //    tether.positionCount++;
+
+        //    tether.SetPosition(tether.positionCount - 1, tetherPoint.transform.position);
+
+        //    tetherPoints.Add(tetherPoint);
+
+        //    if (currentPoint < tetherLength)
+        //    {
+        //        currentPoint++;
+        //    }
+        //}
     }
 
     private void AttachDetach()
     {
+
         if (attach)
         {
             transform.position = hull.transform.position;
@@ -84,7 +103,19 @@ public class Turret : MonoBehaviour
                     rb.velocity = barrel.transform.up * detachSpeed;
                 }
 
-                hullCode.moveSpeed = 8f;
+                //if (tether.positionCount != tetherLength)
+                //{
+                //    GameObject firstPoint = Instantiate(tetherPointPrefab, transform.position, Quaternion.identity);
+
+                //    tether.positionCount++;
+               
+                //    tether.SetPosition(tether.positionCount - 1, firstPoint.transform.position);
+
+                //    tetherPoints.Add(firstPoint);
+                //}
+
+
+                hullCode.moveSpeed = hullCode.moveSpeed + 5f;
             }
             else if (!attach)
             {
@@ -105,6 +136,17 @@ public class Turret : MonoBehaviour
 
         if (reattach)
         {
+            //if (tetherPoints.Count > 0)
+            //{
+            //    foreach (var tether in tetherPoints)
+            //    {
+            //        if (transform.position != tether.transform.position)
+            //        {
+            //            transform.position = Vector2.MoveTowards(transform.position, tether.transform.position, Time.deltaTime * 5f);
+            //        }
+            //    }
+            //}
+
             transform.position = Vector2.SmoothDamp(transform.position, hull.transform.position, ref velocity, 0.3f);
 
             if (Vector2.Distance(transform.position, hull.transform.position) <= 1f)
@@ -122,22 +164,27 @@ public class Turret : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && currentAmmo > 0 && canShoot)
         {
-            GameObject projectile = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
-
-            Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
-
-            projectileRb.AddForce(projectile.transform.up * projectileSpeed);
-
-            Destroy(projectile, 8f);
-
-            currentAmmo--;
-
-            canShoot = false;
-
             turretAnimator.SetTrigger("Fire");
-
-            Invoke("DoFirerate", firerate);
+            AudioManager.Instance.PlayEffect("Turretshoot");
+            Invoke("FireProjectile", fireDelay);
         }
+    }
+
+    private void FireProjectile()
+    {
+        GameObject projectile = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
+
+        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+
+        projectileRb.AddForce(projectile.transform.up * projectileSpeed);
+
+        Destroy(projectile, 8f);
+
+        currentAmmo--;
+
+        canShoot = false;
+
+        Invoke("DoFirerate", firerate);
     }
 
     void DoFirerate()
@@ -186,5 +233,4 @@ public class Turret : MonoBehaviour
         //rotate the gun based on direction of cursor
         rb.rotation = angle;
     }
-
 }

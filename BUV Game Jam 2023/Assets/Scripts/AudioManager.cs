@@ -61,7 +61,14 @@ public class AudioManager : MonoBehaviour
 
         if (_audioClip != null)
         {
-            _effectSource.PlayOneShot(_audioClip);
+            if (_audioClip.name == "Tankwalk")
+            {
+                _effectSource.PlayDelayed(_audioClip.length);
+            }
+            else
+            {
+                _effectSource.PlayOneShot(_audioClip);
+            }
         }
     }
 
@@ -75,6 +82,7 @@ public class AudioManager : MonoBehaviour
             _musicSource.Play();
         }
     }
+
 
     private AudioClip GetClipFromList(string clip, List<Sounds> list)
     {

@@ -12,18 +12,22 @@ public class Enemy : MonoBehaviour
     public bool canAttack = false;
     private Health health;
     private Animator animator;
+    public GameObject deathDecal;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         health = GetComponent<Health>();
         animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Projectile")
         {
+            AudioManager.Instance.PlayEffect("Roachspawn");
+
             chasing = true;
         }
     }
@@ -90,6 +94,8 @@ public class Enemy : MonoBehaviour
         }
         else if (health.dead)
         {
+            AudioManager.Instance.PlayEffect("Enemydeath");
+            Instantiate(deathDecal, this.transform.position, this.transform.rotation);
             Destroy(gameObject);
         }
     }

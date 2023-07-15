@@ -82,8 +82,6 @@ public class Hull : MonoBehaviour
         //        rb.rotation += rotateSpeed;
         //    }
         //}    
-
-
     }
 
     void ProcessMovement()
@@ -94,6 +92,8 @@ public class Hull : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
+            AudioManager.Instance.PlayEffect("Tankwalk");
+
             hullAnimator.SetTrigger("IsRunning");
         }
         else
