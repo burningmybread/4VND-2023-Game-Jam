@@ -20,7 +20,7 @@ public class Turret : MonoBehaviour
     public int tetherLength = 5;
     private Hull hullCode;
     private Vector2 velocity;
-
+    public Animator turretAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -149,6 +149,9 @@ public class Turret : MonoBehaviour
             Destroy(projectile, 8f);
 
             currentAmmo--;
+
+            turretAnimator.SetTrigger("Fire");
+            turretAnimator.SetTrigger("Stop");
         }
     }
 

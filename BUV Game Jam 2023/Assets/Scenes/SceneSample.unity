@@ -331,7 +331,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.726403
+  orthographic size: 8.84134
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -866,6 +866,7 @@ GameObject:
   - component: {fileID: 1187225124}
   - component: {fileID: 1187225123}
   - component: {fileID: 1187225122}
+  - component: {fileID: 1187225127}
   m_Layer: 9
   m_Name: Tank
   m_TagString: Untagged
@@ -936,6 +937,7 @@ MonoBehaviour:
   moveSpeed: 5
   rotateSpeed: 500
   turret: {fileID: 1295209752}
+  hullAnimator: {fileID: 1187225127}
 --- !u!212 &1187225125
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1003,6 +1005,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!95 &1187225127
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187225121}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 406e63851f9691c419afd3cdc5b48a86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1227115288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227115288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.47, y: -10.32, z: 0}
+  m_LocalPosition: {x: -9.47, y: -17.74, z: 0}
   m_LocalScale: {x: 2.7678, y: 2.7678, z: 2.7678}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1238,6 +1261,7 @@ GameObject:
   - component: {fileID: 1295209754}
   - component: {fileID: 1295209753}
   - component: {fileID: 1295209758}
+  - component: {fileID: 1295209759}
   m_Layer: 8
   m_Name: TankTurret
   m_TagString: Untagged
@@ -1269,6 +1293,7 @@ MonoBehaviour:
   hull: {fileID: 1187225121}
   attach: 1
   tetherLength: 5
+  turretAnimator: {fileID: 1295209759}
 --- !u!50 &1295209754
 Rigidbody2D:
   serializedVersion: 4
@@ -1374,6 +1399,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.5205163, y: 4.63}
   m_Direction: 0
+--- !u!95 &1295209759
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295209752}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 904295279b58b5545ab8f73b97de08a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1306148461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,7 +2423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4783038310988149048, guid: 15fa823e888488c4ea59ed2a6c53b7d6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4783038310988149048, guid: 15fa823e888488c4ea59ed2a6c53b7d6, type: 3}
       propertyPath: m_TagString

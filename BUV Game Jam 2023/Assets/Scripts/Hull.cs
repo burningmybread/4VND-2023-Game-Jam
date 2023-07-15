@@ -10,7 +10,7 @@ public class Hull : MonoBehaviour
     private Vector2 moveDirection;
     private Turret turretCode;
     public GameObject turret;
-
+    public Animator hullAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +92,13 @@ public class Hull : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(moveX, moveY).normalized;
-
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            hullAnimator.SetTrigger("IsRunning");
+        }
+        else
+        {
+            hullAnimator.SetTrigger("IsIdle");
+        }
     }
 }
