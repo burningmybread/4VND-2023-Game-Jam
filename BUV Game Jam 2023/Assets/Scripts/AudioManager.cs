@@ -59,7 +59,7 @@ public class AudioManager : MonoBehaviour
     {
         AudioClip _audioClip = GetClipFromList(clip, SFXTracks);
 
-        if (_audioClip != null)
+        if (_audioClip != null && !_effectSource.isPlaying)
         {
             _effectSource.PlayOneShot(_audioClip);
         }
@@ -75,6 +75,7 @@ public class AudioManager : MonoBehaviour
             _musicSource.Play();
         }
     }
+
 
     private AudioClip GetClipFromList(string clip, List<Sounds> list)
     {
