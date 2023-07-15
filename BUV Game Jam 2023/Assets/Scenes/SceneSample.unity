@@ -181,6 +181,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: _AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5dd50acf4735a0e4ba7f22816ce7e1f9, type: 3}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[1].volume
+      value: 0.268
+      objectReference: {fileID: 0}
     - target: {fileID: 2956439722240607181, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
       propertyPath: m_RootOrder
       value: 11

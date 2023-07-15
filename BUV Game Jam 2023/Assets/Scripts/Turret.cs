@@ -27,8 +27,6 @@ public class Turret : MonoBehaviour
     private Hull hullCode;
     private Vector2 velocity;
     public Animator turretAnimator;
-    private float divider;
-    private int currentPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +36,6 @@ public class Turret : MonoBehaviour
         Physics2D.IgnoreCollision(hull.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         hullCode = hull.GetComponent<Hull>();
         currentAmmo = magazineSize;
-        currentPoint = 0;
     }
 
     // Update is called once per frame
