@@ -130,8 +130,8 @@ public class Turret : MonoBehaviour
 
             currentAmmo--;
 
-            turretAnimator.SetTrigger("Fire");
-            turretAnimator.SetTrigger("Stop");
+            //turretAnimator.SetTrigger("Fire");
+            //turretAnimator.SetTrigger("Stop");
         }
     }
 
@@ -140,7 +140,6 @@ public class Turret : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo < magazineSize && attach && !reattach)
         {
             currentAmmo = 0;
-
             Invoke("Reloading", reloadSpeed);
         }
     }
