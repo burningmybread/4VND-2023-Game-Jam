@@ -48,9 +48,9 @@ MonoBehaviour:
   m_RotationMode: 0
   m_UpdateMethod: 2
   m_Targets:
-  - target: {fileID: 0}
+  - target: {fileID: 6321083040686560576, guid: 3be43bcb9d3f21244b71e8a2884a5b2c, type: 3}
     weight: 1
     radius: 7
-  - target: {fileID: 0}
+  - target: {fileID: 4783038310988149054, guid: 15fa823e888488c4ea59ed2a6c53b7d6, type: 3}
     weight: 1
     radius: 7

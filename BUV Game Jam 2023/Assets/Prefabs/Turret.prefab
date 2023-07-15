@@ -111,7 +111,7 @@ MonoBehaviour:
   reloadSpeed: 3
   currentAmmo: 0
   detachSpeed: 10
-  hull: {fileID: 0}
+  hull: {fileID: 6321083040686560580, guid: 3be43bcb9d3f21244b71e8a2884a5b2c, type: 3}
   attach: 1
   tetherLength: 5
 --- !u!50 &4783038310988149053
