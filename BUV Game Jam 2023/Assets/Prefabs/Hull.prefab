@@ -102,7 +102,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 5
   rotateSpeed: 500
-  turret: {fileID: 0}
+  turret: {fileID: 4783038310988149048, guid: 15fa823e888488c4ea59ed2a6c53b7d6, type: 3}
 --- !u!50 &6321083040686560579
 Rigidbody2D:
   serializedVersion: 4
