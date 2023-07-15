@@ -106,16 +106,16 @@ public class Turret : MonoBehaviour
                     rb.velocity = barrel.transform.up * detachSpeed;
                 }
 
-                if (tether.positionCount != tetherLength)
-                {
-                    GameObject firstPoint = Instantiate(tetherPointPrefab, transform.position, Quaternion.identity);
+                //if (tether.positionCount != tetherLength)
+                //{
+                //    GameObject firstPoint = Instantiate(tetherPointPrefab, transform.position, Quaternion.identity);
 
-                    tether.positionCount++;
+                //    tether.positionCount++;
                
-                    tether.SetPosition(tether.positionCount - 1, firstPoint.transform.position);
+                //    tether.SetPosition(tether.positionCount - 1, firstPoint.transform.position);
 
-                    tetherPoints.Add(firstPoint);
-                }
+                //    tetherPoints.Add(firstPoint);
+                //}
 
 
                 hullCode.moveSpeed = hullCode.moveSpeed + 5f;
@@ -126,12 +126,12 @@ public class Turret : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(this.transform.position, hull.transform.position - this.gameObject.transform.position);
                 if (hit.collider.gameObject == hull)
                 {
-                    //Debug.Log("hit hull");
+                    Debug.Log("hit hull");
                     reattach = true;
                 }
                 else
                 {
-                    //Debug.Log("did not hit");
+                    Debug.Log("did not hit");
                     reattach = false;
                 }
             }
@@ -139,6 +139,17 @@ public class Turret : MonoBehaviour
 
         if (reattach)
         {
+            //if (tetherPoints.Count > 0)
+            //{
+            //    foreach (var tether in tetherPoints)
+            //    {
+            //        if (transform.position != tether.transform.position)
+            //        {
+            //            transform.position = Vector2.MoveTowards(transform.position, tether.transform.position, Time.deltaTime * 5f);
+            //        }
+            //    }
+            //}
+
             transform.position = Vector2.SmoothDamp(transform.position, hull.transform.position, ref velocity, 0.3f);
 
             if (Vector2.Distance(transform.position, hull.transform.position) <= 1f)
