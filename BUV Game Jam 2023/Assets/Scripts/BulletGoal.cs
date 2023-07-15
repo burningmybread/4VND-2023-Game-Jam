@@ -24,7 +24,7 @@ public class BulletGoal : MonoBehaviour
 
         if (collision.gameObject.tag == "Projectile")
         {
-            mainGoal.transform.position = Vector2.Lerp(mainGoal.transform.position, lerpDestination, 3f);
+            mainGoal.transform.position = Vector2.Lerp(mainGoal.transform.position, lerpDestination, 10.0f);
             this.gameObject.GetComponent<SpriteRenderer>().sprite = pressed;
         }
     }
