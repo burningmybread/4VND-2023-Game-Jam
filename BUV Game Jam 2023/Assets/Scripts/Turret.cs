@@ -7,7 +7,7 @@ public class Turret : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     public Transform barrel;
     public GameObject projectilePrefab;
-    //public GameObject tetherPointPrefab;
+    public GameObject tetherPointPrefab;
     public float projectileSpeed;
     public int magazineSize;
     public float reloadSpeed;
@@ -17,7 +17,7 @@ public class Turret : MonoBehaviour
     public bool attach = true;
     private bool reattach = false;
     private LineRenderer tether;
-    //public int tetherLength = 5;
+    public int tetherLength = 5;
     private Hull hullCode;
     private Vector2 velocity;
 
@@ -70,39 +70,9 @@ public class Turret : MonoBehaviour
                 }
 
                 hullCode.moveSpeed = 8f;
+                
 
-                //List<GameObject> tetherPoints = new List<GameObject>();
 
-                //for (int i = 0; i <= tether.positionCount; i++)
-                //{
-                //    GameObject tetherPoint = Instantiate(tetherPointPrefab, transform.position, Quaternion.identity);
-
-                //    tetherPoints.Add(tetherPoint);
-
-                //    for (int y = 0; y <= tether.positionCount; y++)
-                //    {
-                //        if (y == tether.positionCount)
-                //        {
-                //            tether.SetPosition(y, hull.transform.position);
-                //        }
-                //        else if (y < tether.positionCount)
-                //        {
-                //            tether.SetPosition(y, tetherPoints[i].transform.position);
-                //        }
-                //    }
-                //}
-
-                //for (int i = 0; i <= tetherLength; i++)
-                //{
-                //    if (i <= tetherLength)
-                //    {
-                //        tether.SetPosition(i, transform.position);
-                //    }
-                //    else
-                //    {
-                //        tether.SetPosition(i, hull.transform.position);
-                //    }
-                //}
             }
             else if (!attach)
             {
