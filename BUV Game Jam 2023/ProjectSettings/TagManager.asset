@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Enemy
   - TurretDock
+  - Enemy Projectile
   layers:
   - Default
   - TransparentFX

@@ -47,41 +47,6 @@ public class Hull : MonoBehaviour
         {
             this.gameObject.layer = LayerMask.NameToLayer("Default");
         }
-
-
-        //if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        //{
-        //    rb.velocity = moveDirection * moveSpeed;
-        //}
-
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    if (rb.rotation != 0f)
-        //    {
-        //        rb.rotation -= rotateSpeed;
-        //    }
-        //}
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    if (rb.rotation != -90f)
-        //    {
-        //        rb.rotation -= rotateSpeed;
-        //    }
-        //}
-        //if (Input.GetKey(KeyCode.S))
-        //{
-        //    if (rb.rotation != 180f)
-        //    {
-        //        rb.rotation += rotateSpeed;
-        //    }
-        //}
-        //else if (Input.GetKey(KeyCode.D))
-        //{
-        //    if (rb.rotation != 90f)
-        //    {
-        //        rb.rotation += rotateSpeed;
-        //    }
-        //}    
     }
 
     void ProcessMovement()

@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class EnemyProjectile : Projectile
 {
-    public float damage;
-    public GameObject impactFx;
-
     // Start is called before the first frame update
     void Start()
     {
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("Tank").GetComponent<Collider2D>());
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("Turret").GetComponent<Collider2D>());
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        //foreach (var enemy in enemies)
+        //{
+        //    Physics2D.IgnoreCollision(GetComponent<Collider2D>(), enemy.GetComponent<Collider2D>());
+        //}
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
@@ -21,12 +21,11 @@ public class Projectile : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public new void OnCollisionEnter2D(Collision2D collision)
     {
         Instantiate(impactFx, this.transform.position, this.transform.rotation);
 
-        //damages enemy and destroys bullet 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Player")
         {
             var health = collision.gameObject.GetComponent<Health>();
 
@@ -34,8 +33,7 @@ public class Projectile : MonoBehaviour
 
             Destroy(gameObject);
         }
-        //destroys bullet if it hits a wall
-        else if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Player")
+        else if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
         }
