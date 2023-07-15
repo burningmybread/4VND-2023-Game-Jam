@@ -92,11 +92,7 @@ public class Hull : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-<<<<<<< Updated upstream
-            AudioManager.Instance.PlayWalk("Tankwalk");
-=======
-            //AudioManager.Instance.PlayEffect("Tankwalk");
->>>>>>> Stashed changes
+            AudioManager.Instance.PlayWalk("Walk");
 
             hullAnimator.SetTrigger("IsRunning");
         }
