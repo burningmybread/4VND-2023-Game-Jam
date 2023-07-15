@@ -235,7 +235,7 @@ public class Turret : MonoBehaviour
         {
             if (!attach)
             {
-                projectilePrefab.gameObject.layer = LayerMask.NameToLayer("Projectile");
+                projectilePrefab.gameObject.layer = LayerMask.NameToLayer("Bullet");
                 isDocked = false;
                 canReload = false;
             }
