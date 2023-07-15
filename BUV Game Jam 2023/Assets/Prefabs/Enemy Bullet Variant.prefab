@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1634397918872729274, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
       propertyPath: m_Name
-      value: Enemy Bullet
+      value: Enemy Bullet Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634397918872729274, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1634397918872729274, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
       propertyPath: m_TagString

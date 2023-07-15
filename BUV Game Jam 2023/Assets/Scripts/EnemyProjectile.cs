@@ -7,12 +7,8 @@ public class EnemyProjectile : Projectile
     // Start is called before the first frame update
     void Start()
     {
-        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        //foreach (var enemy in enemies)
-        //{
-        //    Physics2D.IgnoreCollision(GetComponent<Collider2D>(), enemy.GetComponent<Collider2D>());
-        //}
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        Physics2D.IgnoreLayerCollision(3, 11);
+        Physics2D.IgnoreLayerCollision(3, 12);
     }
 
     // Update is called once per frame
