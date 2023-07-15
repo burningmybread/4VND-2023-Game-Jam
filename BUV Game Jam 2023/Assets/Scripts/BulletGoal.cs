@@ -5,6 +5,8 @@ using UnityEngine;
 public class BulletGoal : MonoBehaviour
 {
     public GameObject mainGoal;
+    public Sprite pressed;
+    public Vector2 lerpDestination;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +24,8 @@ public class BulletGoal : MonoBehaviour
 
         if (collision.gameObject.tag == "Projectile")
         {
-            Destroy(mainGoal.gameObject);
-            Destroy(this.gameObject);
+            mainGoal.transform.position = Vector2.Lerp(mainGoal.transform.position, lerpDestination, 3f);
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = pressed;
         }
     }
 }

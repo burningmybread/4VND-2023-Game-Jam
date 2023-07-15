@@ -446,6 +446,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Puzzle props_0
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 668
+        width: 154
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d136940f49a7341a9d530074d73d1b
+      internalID: -1132664235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle props_15
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 201
+        width: 180
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db0762a2dd513846a0c5bf1b3583edd
+      internalID: -494906364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puzzle props_16
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 199
+        width: 181
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d46cf4dffe791b842b0283268732e92f
+      internalID: 930031156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -465,6 +528,7 @@ TextureImporter:
       Puzzle props_13: -1588838430
       Puzzle props_14: -1938512106
       Puzzle props_15: -494906364
+      Puzzle props_16: 930031156
       Puzzle props_2: -1087617284
       Puzzle props_3: 736663108
       Puzzle props_4: 2133100095
