@@ -26,8 +26,6 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Projectile")
         {
-            AudioManager.Instance.PlayEffect("Roachspawn");
-
             chasing = true;
         }
     }
