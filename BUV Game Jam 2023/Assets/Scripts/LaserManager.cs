@@ -9,12 +9,13 @@ public class LaserManager : MonoBehaviour
     private bool canCreate = true;
     public int loopAmount = 10;
     public Transform laserSpawn;
-    private bool done = false;
+    public GameObject door;
+    public GameObject winScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        door.SetActive(false);
     }
 
     private void Update()
@@ -26,6 +27,7 @@ public class LaserManager : MonoBehaviour
       if (collision.gameObject.tag == "Player" && active)
         {
             StartCoroutine(LaserCreate());
+            door.SetActive(true);
         }
     }
 
@@ -40,9 +42,10 @@ public class LaserManager : MonoBehaviour
                 canCreate = false;
                 yield return new WaitForSeconds(3f);
                 canCreate = true;
-
             }
         }
+
+        winScreen.SetActive(true);
     }
 
     private void Delay()
