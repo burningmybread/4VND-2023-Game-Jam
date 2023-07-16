@@ -77,7 +77,7 @@ public class RangedEnemy : Enemy
         }
         else if (health.dead)
         {
-            AudioManager.Instance.PlayEffect("Enemydeath");
+            AudioManager.Instance.PlayEnemySounds("Enemydeath");
             Instantiate(deathDecal, this.transform.position, this.transform.rotation);
             Destroy(gameObject);
         }

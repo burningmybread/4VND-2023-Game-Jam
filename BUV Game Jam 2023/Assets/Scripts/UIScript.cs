@@ -19,11 +19,13 @@ public class UIScript : MonoBehaviour
     private void OnEnable()
     {
         Turret.UseAmmo += UpdateAmmo;
+        Turret.ReloadDisplay += ReloadDisplay;
         Hull.AddSphere += UpdateSphere;
     }
 
     private void OnDisable()
     {
+        Turret.ReloadDisplay -= ReloadDisplay;
         Turret.UseAmmo -= UpdateAmmo;
         Hull.AddSphere -= UpdateSphere;
     }
@@ -31,6 +33,11 @@ public class UIScript : MonoBehaviour
     private void UpdateAmmo()
     {
         ammoCount.text = $"x{turretscript.currentAmmo}";
+    }
+
+    private void ReloadDisplay()
+    {
+        ammoCount.text = $"RELOADING";
     }
 
     private void UpdateSphere()
@@ -44,7 +51,7 @@ public class UIScript : MonoBehaviour
         sceneName = scene.name;
     
         turretscript = GameObject.Find("Turret").GetComponent<Turret>();
-        hullscript = GameObject.Find("Hull").GetComponent<Hull>();
+        hullscript = GameObject.Find("Tank").GetComponent<Hull>();
     }
 
     private void Update()

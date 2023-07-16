@@ -7,6 +7,7 @@ using System;
 public class Turret : MonoBehaviour
 {
     public static event Action UseAmmo;
+    public static event Action ReloadDisplay;
 
     [HideInInspector] public Rigidbody2D rb;
     public Transform barrel;
@@ -40,6 +41,7 @@ public class Turret : MonoBehaviour
         Physics2D.IgnoreCollision(hull.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         hullCode = hull.GetComponent<Hull>();
         currentAmmo = magazineSize;
+        UseAmmo?.Invoke();
     }
 
     // Update is called once per frame
@@ -130,12 +132,10 @@ public class Turret : MonoBehaviour
                 //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GameObject.Find("Tank").GetComponent<Collider2D>());
                 if (hit.collider.gameObject == hull)
                 {
-                    Debug.Log("hit hull");
                     reattach = true;
                 }
                 else
                 {
-                    Debug.Log("did not hit");
                     reattach = false;
                 }
             }
@@ -143,17 +143,6 @@ public class Turret : MonoBehaviour
 
         if (reattach)
         {
-            //if (tetherPoints.Count > 0)
-            //{
-            //    foreach (var tether in tetherPoints)
-            //    {
-            //        if (transform.position != tether.transform.position)
-            //        {
-            //            transform.position = Vector2.MoveTowards(transform.position, tether.transform.position, Time.deltaTime * 5f);
-            //        }
-            //    }
-            //}
-
             transform.position = Vector2.SmoothDamp(transform.position, hull.transform.position, ref velocity, 0.3f);
 
             if (Vector2.Distance(transform.position, hull.transform.position) <= 4f)
@@ -209,6 +198,9 @@ public class Turret : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo < magazineSize && canReload)
         {
             currentAmmo = 0;
+
+            ReloadDisplay?.Invoke();
+
             Invoke("Reloading", reloadSpeed);
         }
     }
@@ -216,6 +208,9 @@ public class Turret : MonoBehaviour
     void Reloading()
     {
         currentAmmo = magazineSize;
+
+        UseAmmo?.Invoke();
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

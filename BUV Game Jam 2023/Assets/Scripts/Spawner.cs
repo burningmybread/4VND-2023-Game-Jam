@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && active)
         {
-            AudioManager.Instance.PlayEffect("Roachspawn");
+            AudioManager.Instance.PlayEnemySounds("Roachswarm");
 
             for (int i = 0; i < spawnAmount; i++)
             {
