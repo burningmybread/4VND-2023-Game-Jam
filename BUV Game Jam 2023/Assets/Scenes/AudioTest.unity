@@ -401,6 +401,107 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8c7778e0973f174c94115caf2ded5eb, type: 3}
+--- !u!1 &1239402412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2956439722240607177, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+  m_PrefabInstance: {fileID: 2956439722129624424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1239402418
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239402412}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6409211388073458141, guid: c1b86a38101dda7449729649fcc02699, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1827945845 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2791900444443132151, guid: a8c7778e0973f174c94115caf2ded5eb, type: 3}
@@ -421,6 +522,94 @@ PrefabInstance:
     - target: {fileID: 2956439722240607177, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
       propertyPath: m_Name
       value: _AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: AMG_Enemy
+      value: 
+      objectReference: {fileID: 6409211388073458141, guid: c1b86a38101dda7449729649fcc02699, type: 2}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: _enemySource
+      value: 
+      objectReference: {fileID: 1239402418}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: EnemyTrack.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 265dbbb333662804fb76597876675d8b, type: 3}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 22dc2f67d730cd14fb05c715fc3dac95, type: 3}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 22dc2f67d730cd14fb05c715fc3dac95, type: 3}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 22dc2f67d730cd14fb05c715fc3dac95, type: 3}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: EnemyTrack.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a81532b8eea27c4697c10a5cf8d4a91, type: 3}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: EnemyTrack.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 362aea437f1e10c41b261282bc908cd7, type: 3}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[1].volume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[4].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: EnemyTrack.Array.data[0].volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: EnemyTrack.Array.data[1].volume
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[1].TrackName
+      value: Laserhum
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[2].TrackName
+      value: Deathbylaser
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[3].TrackName
+      value: Deathbylaser
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: SFXTracks.Array.data[4].TrackName
+      value: Deathbylaser
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: EnemyTrack.Array.data[0].TrackName
+      value: Roachswarm
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956439722240607180, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
+      propertyPath: EnemyTrack.Array.data[1].TrackName
+      value: Enemydeath
       objectReference: {fileID: 0}
     - target: {fileID: 2956439722240607181, guid: b28ec302044b2ff4cae3590ea4d86ac7, type: 3}
       propertyPath: m_RootOrder

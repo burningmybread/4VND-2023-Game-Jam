@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Hull : MonoBehaviour
 {
+    public static event Action AddSphere;
+    
     [HideInInspector] public Rigidbody2D rb;
     public float moveSpeed;
     public float rotateSpeed;
@@ -72,6 +75,8 @@ public class Hull : MonoBehaviour
         if(collision.gameObject.tag == "DataSphere")
         {
             numberOfSphere++;
+            AddSphere?.Invoke();
+
             Destroy(collision.gameObject);
             Debug.Log(numberOfSphere);
         }
