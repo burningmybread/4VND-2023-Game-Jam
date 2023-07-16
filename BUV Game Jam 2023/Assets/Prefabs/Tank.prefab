@@ -106,6 +106,7 @@ MonoBehaviour:
   rotateSpeed: 500
   turret: {fileID: 0}
   hullAnimator: {fileID: 1147534936}
+  numberOfSphere: 0
 --- !u!50 &2791900444443132149
 Rigidbody2D:
   serializedVersion: 4
