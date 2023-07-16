@@ -31,6 +31,7 @@ public class Turret : MonoBehaviour
     public Animator turretAnimator;
     private bool canReload = true;
     public bool isDocked;
+    public Transform laserEnd;
 
     // Start is called before the first frame update
     void Start()
@@ -259,5 +260,10 @@ public class Turret : MonoBehaviour
 
         //rotate the gun based on direction of cursor
         rb.rotation = angle;
+
+        var laser = barrel.GetComponent<LineRenderer>();
+
+        laser.SetPosition(0, barrel.transform.position);
+        laser.SetPosition(1, mousePos);
     }
 }

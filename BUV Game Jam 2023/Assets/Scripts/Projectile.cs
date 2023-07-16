@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         Physics2D.IgnoreLayerCollision(3, 4);
+        gameObject.layer = LayerMask.NameToLayer("Bullet");
     }
 
     // Update is called once per frame
