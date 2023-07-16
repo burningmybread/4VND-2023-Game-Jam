@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1220552002618098361}
   - component: {fileID: 1220552002618098360}
   - component: {fileID: 1220552002618098363}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Enemy Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -54,6 +54,7 @@ MonoBehaviour:
   - {fileID: 0}
   spawnAmount: 5
   active: 1
+  infinite: 0
 --- !u!61 &1220552002618098363
 BoxCollider2D:
   m_ObjectHideFlags: 0

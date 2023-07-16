@@ -107,8 +107,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1305491361
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 1082388326, guid: ebd4ed824f7250f478cc04a5c272bc14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -152,7 +152,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 60
 --- !u!50 &5621451510755538821
 Rigidbody2D:
   serializedVersion: 4
@@ -223,17 +223,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  chasing: 1
+  chasing: 0
   moveSpeed: 0
   damage: 0
-  attackDistance: 15
+  attackDistance: 60
   canAttack: 0
   health: {fileID: 5621451510755538823}
   animator: {fileID: 5621451510755538822}
   deathDecal: {fileID: 5928240883229312341, guid: 52a8924cb1eb8c74c84f8b0e993a51e0, type: 3}
   firerate: 1
   projectilePrefab: {fileID: 1942024670162352354, guid: 9de144aeca2d8ba4cb4ce55e0a4d034b, type: 3}
-  projectileSpeed: 1000
+  projectileSpeed: 600
   barrel: {fileID: 2089916974}
 --- !u!1 &5621451510786290993
 GameObject:
