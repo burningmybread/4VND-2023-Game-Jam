@@ -41,7 +41,6 @@ public class Turret : MonoBehaviour
         Physics2D.IgnoreCollision(hull.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         hullCode = hull.GetComponent<Hull>();
         currentAmmo = magazineSize;
-        UseAmmo?.Invoke();
     }
 
     // Update is called once per frame
@@ -153,7 +152,7 @@ public class Turret : MonoBehaviour
 
                 canReload = true;
 
-                hullCode.moveSpeed = 8f;
+                hullCode.moveSpeed = 15f;
             }
         }
     }
