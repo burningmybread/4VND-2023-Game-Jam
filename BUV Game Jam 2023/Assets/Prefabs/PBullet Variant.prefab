@@ -15,6 +15,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 5145939261290945551, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145939261290945551, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -594047581
+      objectReference: {fileID: 0}
     - target: {fileID: 6530500072666250188, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
       propertyPath: penetration
       value: 1
