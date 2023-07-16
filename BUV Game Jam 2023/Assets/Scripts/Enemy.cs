@@ -61,35 +61,41 @@ public class Enemy : MonoBehaviour
     {
         if (!health.dead)
         {
-            if (chasing == true)
+
+            RaycastHit2D hit = Physics2D.Raycast(this.transform.position, player.transform.position - this.gameObject.transform.position);
+
+            if (hit.collider.gameObject.tag != "Wall")
             {
-                if (Vector2.Distance(transform.position, player.transform.position) > attackDistance)
+                if (chasing == true)
                 {
-                    canAttack = false;
+                    if (Vector2.Distance(transform.position, player.transform.position) > attackDistance)
+                    {
+                        canAttack = false;
                     
-                    animator.SetTrigger("Moving");
+                        animator.SetTrigger("Moving");
 
-                    //Move the enemy toward a given position which is player
-                    transform.parent.position = Vector2.MoveTowards(transform.parent.position, player.transform.position, moveSpeed * Time.deltaTime);
+                        //Move the enemy toward a given position which is player
+                        transform.parent.position = Vector2.MoveTowards(transform.parent.position, player.transform.position, moveSpeed * Time.deltaTime);
+                    }
+                    else if (Vector2.Distance(transform.parent.position, player.transform.position) <= attackDistance)
+                    {
+                        canAttack = true;
+                    }
+                    else
+                    {
+                        animator.SetTrigger("Idle");
+
+                        canAttack = false;
+                    }
+
+                    Vector2 direction = player.transform.position - transform.parent.position;
+                    direction.Normalize();
+
+                    //Mathf to find angle between 2 points in radians, multiply to change it to degree
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+                    transform.parent.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
                 }
-                else if (Vector2.Distance(transform.parent.position, player.transform.position) <= attackDistance)
-                {
-                    canAttack = true;
-                }
-                else
-                {
-                    animator.SetTrigger("Idle");
-
-                    canAttack = false;
-                }
-
-                Vector2 direction = player.transform.position - transform.parent.position;
-                direction.Normalize();
-
-                //Mathf to find angle between 2 points in radians, multiply to change it to degree
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-                transform.parent.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             }
         }
         else if (health.dead)
