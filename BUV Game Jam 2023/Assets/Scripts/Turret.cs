@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class Turret : MonoBehaviour
 {
+    public static event Action UseAmmo;
+
     [HideInInspector] public Rigidbody2D rb;
     public Transform barrel;
     public GameObject projectilePrefab;
@@ -17,7 +20,7 @@ public class Turret : MonoBehaviour
     public float projectileSpeed;
     public int magazineSize;
     public float reloadSpeed;
-    [SerializeField] int currentAmmo;
+    public int currentAmmo;
     public float detachSpeed;
     public GameObject hull;
     public bool attach = true;
@@ -187,6 +190,7 @@ public class Turret : MonoBehaviour
         Destroy(projectile, 20f);
 
         currentAmmo--;
+        UseAmmo?.Invoke();
 
         canShoot = false;
 
