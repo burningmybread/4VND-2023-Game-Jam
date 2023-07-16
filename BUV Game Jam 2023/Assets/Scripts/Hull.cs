@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Hull : MonoBehaviour
 {
-    public static event Action AddSphere;
-    
     [HideInInspector] public Rigidbody2D rb;
     public float moveSpeed;
     public float rotateSpeed;
@@ -14,7 +11,7 @@ public class Hull : MonoBehaviour
     private Turret turretCode;
     public GameObject turret;
     public Animator hullAnimator;
-    public int numberOfSphere;
+    private int numberOfSphere;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,8 +72,6 @@ public class Hull : MonoBehaviour
         if(collision.gameObject.tag == "DataSphere")
         {
             numberOfSphere++;
-            AddSphere?.Invoke();
-
             Destroy(collision.gameObject);
             Debug.Log(numberOfSphere);
         }

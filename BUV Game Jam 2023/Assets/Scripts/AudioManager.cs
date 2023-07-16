@@ -12,7 +12,6 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup AMG_Music;
     public AudioMixerGroup AMG_SFX;
     public AudioMixerGroup AMG_Walk;
-    public AudioMixerGroup AMG_Enemy;
 
     //public const string MUSIC_KEY = "musicVolume"; //shows player prefs where to save the data; called in VolumeSettings.cs
     //public const string SFX_KEY = "sfxVolume";
@@ -29,12 +28,10 @@ public class AudioManager : MonoBehaviour
     public List<Sounds> MusicTracks;
     public List<Sounds> SFXTracks;
     public List<Sounds> WalkTrack;
-    public List<Sounds> EnemyTrack;
 
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _effectSource;
     [SerializeField] private AudioSource _walkSource;
-    [SerializeField] private AudioSource _enemySource;
     [SerializeField] private bool musicFadingOut = false;
 
     private void Awake()
@@ -68,16 +65,6 @@ public class AudioManager : MonoBehaviour
         if (_audioClip != null && !_walkSource.isPlaying)
         {
             _walkSource.Play();
-        }
-    }
-    
-    public void PlayEnemySound(string clip)
-    {
-        AudioClip _audioClip = GetClipFromList(clip, EnemyTrack);
-
-        if (_audioClip != null && !_enemySource.isPlaying)
-        {
-            _enemySource.Play();
         }
     }
 

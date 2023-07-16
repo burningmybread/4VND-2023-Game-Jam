@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Projectile")
         {
+            AudioManager.Instance.PlayEffect("Roachspawn");
+
             chasing = true;
         }
     }
@@ -92,7 +94,7 @@ public class Enemy : MonoBehaviour
         }
         else if (health.dead)
         {
-            AudioManager.Instance.PlayEnemySound("Enemydeath");
+            AudioManager.Instance.PlayEffect("Enemydeath");
             Instantiate(deathDecal, this.transform.position, this.transform.rotation);
             Destroy(gameObject);
         }
