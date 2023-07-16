@@ -12,6 +12,8 @@ public class Turret : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     public Transform barrel;
     public GameObject projectilePrefab;
+    public GameObject normalBullet;
+    public GameObject penetrationBullet;
     //public GameObject tetherPointPrefab;
     private List<GameObject> tetherPoints = new List<GameObject>();
     //private int tetherPoint;
@@ -41,6 +43,7 @@ public class Turret : MonoBehaviour
         Physics2D.IgnoreCollision(hull.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         hullCode = hull.GetComponent<Hull>();
         currentAmmo = magazineSize;
+        projectilePrefab = normalBullet;
     }
 
     // Update is called once per frame
@@ -219,7 +222,7 @@ public class Turret : MonoBehaviour
             {
                 canReload = true;
 
-                projectilePrefab.gameObject.layer = LayerMask.NameToLayer("Penetration");
+                projectilePrefab = penetrationBullet;
                 this.transform.position = collision.transform.position;
                 rb.velocity = barrel.transform.up * 0;
                 isDocked = true;
@@ -233,7 +236,7 @@ public class Turret : MonoBehaviour
         {
             if (!attach)
             {
-                projectilePrefab.gameObject.layer = LayerMask.NameToLayer("Bullet");
+                projectilePrefab = normalBullet;
                 isDocked = false;
                 canReload = false;
             }
