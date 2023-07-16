@@ -44,8 +44,11 @@ public class UIScript : MonoBehaviour
 
     void Start()
     {
-        turretscript = GameObject.FindGameObjectWithTag("Player").GetComponent<Turret>();
-        hullscript = GameObject.FindGameObjectWithTag("Player").GetComponent<Hull>();
+        turretscript = GameObject.Find("Turret").GetComponent<Turret>();
+        UpdateAmmo();
+        Debug.Log(turretscript);
+        hullscript = GameObject.Find("Tank").GetComponent<Hull>();
+        Debug.Log(hullscript);
         scene = SceneManager.GetActiveScene();
         sceneName = scene.name;
     }
