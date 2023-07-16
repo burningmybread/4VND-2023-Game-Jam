@@ -10,7 +10,7 @@ public class Dock : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Turret")
         {
             var turret = collision.GetComponent<Turret>();
             
@@ -30,7 +30,7 @@ public class Dock : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Turret")
         {
             var turret = collision.GetComponent<Turret>();
 

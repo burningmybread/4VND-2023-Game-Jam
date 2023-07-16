@@ -10,6 +10,8 @@ TagManager:
   - TurretDock
   - Enemy Projectile
   - DataSphere
+  - Turret
+  - BounceRamp
   layers:
   - Default
   - TransparentFX

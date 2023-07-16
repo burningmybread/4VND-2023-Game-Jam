@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3375223534508714523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.77813, y: -10.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -108,8 +108,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1305491361
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -2119750520, guid: ebd4ed824f7250f478cc04a5c272bc14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -209,8 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2791900444443132151, guid: a8c7778e0973f174c94115caf2ded5eb, type: 3}
-  chasing: 1
-  moveSpeed: 3
+  chasing: 0
+  moveSpeed: 4.5
   damage: 2
   attackDistance: 6
   canAttack: 1

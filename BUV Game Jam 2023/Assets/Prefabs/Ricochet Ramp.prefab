@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7409693437004767037}
   m_Layer: 0
   m_Name: Ricochet Ramp
-  m_TagString: Untagged
+  m_TagString: BounceRamp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 869661893, guid: 3d6b2e7b2056d294080e34e8953651b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc05f4670ab2e245967257cda421e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ricochetSpeed: 1000
+  ricochetSpeed: 1500
   ricochetDegree: 0
 --- !u!60 &7409693437004767037
 PolygonCollider2D:
@@ -116,8 +116,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.691561, y: 1.1999999}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -13,7 +13,9 @@ public class RangedEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        health = GetComponent<Health>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame

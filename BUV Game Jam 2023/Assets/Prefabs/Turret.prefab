@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3347609481435464447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.56, y: -5.79, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -126,8 +126,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   barrel: {fileID: 3347609482296318310}
   projectilePrefab: {fileID: 1634397918872729274, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
-  tetherPointPrefab: {fileID: 5357405845509140287, guid: 6defd2e9c369a084b8d909a4fe1f1afb, type: 3}
-  tetherLength: 5
   fireDelay: 0.5
   firerate: 1.2
   projectileSpeed: 1000
@@ -138,6 +136,7 @@ MonoBehaviour:
   hull: {fileID: 0}
   attach: 1
   turretAnimator: {fileID: 2113654251}
+  isDocked: 0
 --- !u!70 &3347609481435464441
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

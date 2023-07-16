@@ -23,7 +23,7 @@ public class EnemyProjectile : Projectile
 
         if (collision.gameObject.tag == "Player")
         {
-            var health = collision.gameObject.GetComponent<Health>();
+            var health = collision.gameObject.GetComponent<PlayerHealth>();
 
             health.hp = health.hp - damage;
 
