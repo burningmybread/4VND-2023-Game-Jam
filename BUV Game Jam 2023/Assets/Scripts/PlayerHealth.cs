@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static event Action TriggerGameOver;
+
     public float hp;
     public float maxHp = 100f;
     public bool dead = false;
@@ -29,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         if (hp <= 0f)
         {
             dead = true;
+            TriggerGameOver?.Invoke();
         }
     }
 }

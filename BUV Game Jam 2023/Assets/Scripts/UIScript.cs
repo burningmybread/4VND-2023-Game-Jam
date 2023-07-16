@@ -13,6 +13,7 @@ public class UIScript : MonoBehaviour
     private Hull hullscript;
 
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject gameoverPanel;
     Scene scene;
     string sceneName;
 
@@ -21,6 +22,7 @@ public class UIScript : MonoBehaviour
         Turret.UseAmmo += UpdateAmmo;
         Turret.ReloadDisplay += ReloadDisplay;
         Hull.AddSphere += UpdateSphere;
+        PlayerHealth.TriggerGameOver += GameOver;
     }
 
     private void OnDisable()
@@ -28,6 +30,7 @@ public class UIScript : MonoBehaviour
         Turret.ReloadDisplay -= ReloadDisplay;
         Turret.UseAmmo -= UpdateAmmo;
         Hull.AddSphere -= UpdateSphere;
+        PlayerHealth.TriggerGameOver -= GameOver;
     }
 
     private void UpdateAmmo()
@@ -77,10 +80,17 @@ public class UIScript : MonoBehaviour
     public void ReturnToMainMenu()
     {
         SceneManager.LoadScene("TitleScreen");
+        Time.timeScale = 1;
     }
 
     public void Restart()
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void GameOver()
+    {
+        gameoverPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }
