@@ -85,7 +85,8 @@ public class UIScript : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainLevel");
     }
 
     public void GameOver()
