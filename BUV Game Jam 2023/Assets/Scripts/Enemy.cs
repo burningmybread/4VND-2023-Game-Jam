@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
     {
         if (canAttack)
         {
-            var playerHealth = player.GetComponent<Health>();
+            var playerHealth = player.GetComponent<PlayerHealth>();
 
             playerHealth.hp = playerHealth.hp - damage;
         }
