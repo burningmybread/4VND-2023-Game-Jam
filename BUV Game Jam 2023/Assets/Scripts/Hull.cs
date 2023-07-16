@@ -11,7 +11,7 @@ public class Hull : MonoBehaviour
     private Turret turretCode;
     public GameObject turret;
     public Animator hullAnimator;
-    private int numberOfSphere;
+    public int numberOfSphere;
     // Start is called before the first frame update
     void Start()
     {
