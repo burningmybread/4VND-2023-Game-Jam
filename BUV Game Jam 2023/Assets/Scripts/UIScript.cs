@@ -92,6 +92,5 @@ public class UIScript : MonoBehaviour
     public void GameOver()
     {
         gameoverPanel.SetActive(true);
-        Time.timeScale = 0;
     }
 }
