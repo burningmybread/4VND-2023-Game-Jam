@@ -239,8 +239,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   barrel: {fileID: 3347609482296318310}
   projectilePrefab: {fileID: 1634397918872729274, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
-  normalBullet: {fileID: 0}
-  penetrationBullet: {fileID: 0}
+  normalBullet: {fileID: 1634397918872729274, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
+  penetrationBullet: {fileID: 1634397918872729274, guid: 43f009a36952e7c46a18214a035994f5, type: 3}
   fireDelay: 0.5
   firerate: 1.2
   projectileSpeed: 1500
@@ -486,7 +486,7 @@ LineRenderer:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 0, g: 1, b: 0.10499692, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -494,7 +494,7 @@ LineRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
