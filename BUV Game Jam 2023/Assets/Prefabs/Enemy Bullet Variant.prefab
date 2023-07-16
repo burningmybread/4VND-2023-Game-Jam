@@ -19,17 +19,29 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 4186421440956042957, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186421440956042957, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7187578
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186421440956042957, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4039216
+      objectReference: {fileID: 0}
     - target: {fileID: 9101791965133382557, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9101791965133382557, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.3367195
       objectReference: {fileID: 0}
     - target: {fileID: 9101791965133382557, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.19155219
       objectReference: {fileID: 0}
     - target: {fileID: 9101791965133382557, guid: bec044e7b63789a45b1df1544ded263b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -85,3 +97,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   impactFx: {fileID: 1878828990477770901, guid: aade1aed1f2af3448902ce5a3f69d42c, type: 3}
+  penetration: 0
