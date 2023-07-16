@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class Turret : MonoBehaviour
 {
+    public static event Action ReduceAmmo;
+
     [HideInInspector] public Rigidbody2D rb;
     public Transform barrel;
     public GameObject projectilePrefab;
+    public GameObject normalPrefab;
+    public GameObject penetrationPrefab;
     //public GameObject tetherPointPrefab;
     private List<GameObject> tetherPoints = new List<GameObject>();
     //private int tetherPoint;
@@ -17,7 +22,7 @@ public class Turret : MonoBehaviour
     public float projectileSpeed;
     public int magazineSize;
     public float reloadSpeed;
-    [SerializeField] int currentAmmo;
+    public int currentAmmo;
     public float detachSpeed;
     public GameObject hull;
     public bool attach = true;
@@ -28,10 +33,12 @@ public class Turret : MonoBehaviour
     public Animator turretAnimator;
     private bool canReload = true;
     public bool isDocked;
+    public Transform laserEnd;
 
     // Start is called before the first frame update
     void Start()
     {
+        projectilePrefab = normalPrefab;
         rb = GetComponent<Rigidbody2D>();
         tether = GetComponent<LineRenderer>();
         Physics2D.IgnoreCollision(hull.GetComponent<Collider2D>(), GetComponent<Collider2D>());
@@ -187,6 +194,7 @@ public class Turret : MonoBehaviour
         Destroy(projectile, 20f);
 
         currentAmmo--;
+        ReduceAmmo?.Invoke();
 
         canShoot = false;
 
@@ -221,8 +229,9 @@ public class Turret : MonoBehaviour
             {
                 canReload = true;
 
-                projectilePrefab.gameObject.layer = LayerMask.NameToLayer("Penetration");
+                projectilePrefab = penetrationPrefab;
                 this.transform.position = collision.transform.position;
+                collision.gameObject.GetComponent<Rigidbody2D>().angularDrag = 0;
                 rb.velocity = barrel.transform.up * 0;
                 isDocked = true;
             }
@@ -235,9 +244,10 @@ public class Turret : MonoBehaviour
         {
             if (!attach)
             {
-                projectilePrefab.gameObject.layer = LayerMask.NameToLayer("Bullet");
+                projectilePrefab = normalPrefab;
                 isDocked = false;
                 canReload = false;
+                collision.gameObject.GetComponent<Rigidbody2D>().angularDrag = 1.75f;
             }
         }
     }
@@ -255,5 +265,10 @@ public class Turret : MonoBehaviour
 
         //rotate the gun based on direction of cursor
         rb.rotation = angle;
+
+        var laser = barrel.GetComponent<LineRenderer>();
+
+        laser.SetPosition(0, barrel.transform.position);
+        laser.SetPosition(1, mousePos);
     }
 }

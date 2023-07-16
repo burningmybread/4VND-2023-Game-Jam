@@ -26,6 +26,7 @@ public class Spawner : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && active)
         {
+            AudioManager.Instance.PlayEnemySound("Roachspawn");
             for (int i = 0; i < spawnAmount; i++)
             {
                 int randomLocation = Random.Range(0, spawnLocations.Count);
