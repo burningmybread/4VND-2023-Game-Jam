@@ -255,5 +255,9 @@ public class Turret : MonoBehaviour
 
         //rotate the gun based on direction of cursor
         rb.rotation = angle;
+
+        var laser = barrel.GetComponent<LineRenderer>();
+        laser.SetPosition(0, barrel.position);
+        laser.SetPosition(1, mousePos);
     }
 }
