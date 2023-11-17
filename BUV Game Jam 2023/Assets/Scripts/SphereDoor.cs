@@ -21,7 +21,7 @@ public class SphereDoor : MonoBehaviour
     {
         if(hullCode.numberOfSphere == 4)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }
