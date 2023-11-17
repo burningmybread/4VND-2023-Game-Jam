@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Physics2D.IgnoreLayerCollision(3, 4);
+        Physics2D.IgnoreLayerCollision(3, 8);
         gameObject.layer = LayerMask.NameToLayer("Bullet");
     }
 

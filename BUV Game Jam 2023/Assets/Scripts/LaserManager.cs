@@ -39,18 +39,23 @@ public class LaserManager : MonoBehaviour
             {
                 int randomLaser = Random.Range(0, lasers.Count);
                 var laserWave = Instantiate(lasers[randomLaser], laserSpawn.position, Quaternion.identity);
+
+                Debug.Log(i);
+
                 canCreate = false;
                 yield return new WaitForSeconds(3f);
                 canCreate = true;
             }
         }
 
-        winScreen.SetActive(true);
+        Debug.Log("starting winscreen");
+        Invoke("WinScreen", 20f);
     }
 
-    private void Delay()
+    private void WinScreen()
     {
-        canCreate = true;
+        Debug.Log("won");
+        winScreen.SetActive(true);
     }
 
 }

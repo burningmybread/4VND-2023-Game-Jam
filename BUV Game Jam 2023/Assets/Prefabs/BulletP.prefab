@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   impactFx: {fileID: 1878828990477770901, guid: aade1aed1f2af3448902ce5a3f69d42c, type: 3}
-  penetration: 0
+  penetration: 1
 --- !u!70 &634716590977478547
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
